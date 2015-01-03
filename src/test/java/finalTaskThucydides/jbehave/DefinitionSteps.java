@@ -55,4 +55,19 @@ public class DefinitionSteps {
     public void comparePopUpWindowsMessage(String popUpWindowsMessage){
         operations.comparePopUpWindowsMessage(popUpWindowsMessage);
     }
+
+    @Given ("the user click radio button near vip number '$vipLineNumber'")
+    public void checkVipsLineByNumber (int vipLineNumber){
+        operations.checkVipsLineByNumber(vipLineNumber);
+    }
+
+    @Then ("quantity of Vips lines in table should be '$expectedQuantity'")
+    public void countLineInVipsTable(int expectedQuantity){
+        operations.compareLineQuantityInVipsTable(expectedQuantity);
+    }
+
+    @Then ("the user should see vips table with out VIP number '$deletedVipNumber'")
+    public void compareVipsTable(int deletedVipNumber){
+        operations.checkResultOfDeleteOperation(deletedVipNumber);
+    }
 }

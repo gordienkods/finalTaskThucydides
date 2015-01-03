@@ -152,6 +152,11 @@ public class OperationsPage extends PageObject {
     public ArrayList<String> getVipsSentData(){
         return this.sentVipData;
     }
+
+    public ArrayList<String> getVipsSentDataWithOutDeletedVip(int number){
+        this.sentVipData.remove(number);
+        return this.sentVipData;
+    }
     
     public String findButtonOnPageByTitle(String buttonTitle){
         if ("Delete".equals(buttonTitle) && deleteButton.isPresent() ){ return "Delete"; }
@@ -198,4 +203,28 @@ public class OperationsPage extends PageObject {
         }
         return "Can't get message from pop-up window";
     }
+
+    public void checkVipsLineByNumber (int vipLineNumber){
+        find(By.xpath("//table[@id='VIPs']/tbody/tr[" + (vipLineNumber + 1) + "]/td/input[@id='VIP']")).click();
+//        log.info("VIP number " + (vipLineNumber+1) + " deleted");
+        
+    }
+    public void deleteVipByNumber (Integer vipLineNumber){
+
+    }
+
+    public Integer countLineInVipsTable (){
+        Integer countLineInVipsTable = 1;
+        do{
+            try{
+                find(By.xpath("//table[@id='VIPs']/tbody/tr[" + countLineInVipsTable + "]"));
+            }catch (org.openqa.selenium.NoSuchElementException e){
+//                log.info("Count of lines in VIPs table is " + (countLineInVipsTable-1) );
+                return countLineInVipsTable-1;
+            }
+            countLineInVipsTable++;
+        }while (true);
+    }
+
+
 }
