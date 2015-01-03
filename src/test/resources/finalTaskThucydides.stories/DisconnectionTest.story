@@ -4,7 +4,7 @@ When the user click 'Disconnect' button
 Then the user should see that condition of database is 'Offline'
 
 Scenario: Button 'Connect...' should be present when database is 'disconnected'
-Given the user finds 'Connect...' button
+Given the user finds 'Connect' button
 
 Scenario: Load button sould be 'disable' when database is 'disconnected'
 Given the user finds 'Load' button

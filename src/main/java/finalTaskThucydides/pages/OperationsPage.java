@@ -5,8 +5,9 @@ import net.thucydides.core.annotations.findby.FindBy;
 import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
-
+import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Set;
 
 
 @DefaultUrl("http://www.ranorex.com/web-testing-examples/vip")
@@ -21,7 +22,7 @@ public class OperationsPage extends PageObject {
     @FindBy (id = "Category") private WebElementFacade listOfCategory;
     @FindBy (id = "count") private WebElementFacade vipCount;
     @FindBy (id = "Save") private WebElementFacade saveButton;
-    @FindBy (id = "alertTextOK") private WebElementFacade successfulAddVips;
+    @FindBy (id = "alertTextOKCancel") private WebElementFacade popUpWindowsMessage;
     @FindBy (id = "Load") private WebElementFacade loadButton;
     @FindBy (id = "Delete") private WebElementFacade deleteButton;
     @FindBy (id = "Clear") private WebElementFacade clearButton;
@@ -60,12 +61,13 @@ public class OperationsPage extends PageObject {
         }
     }
     
-    public String getDataBaseCondition() {
+    public String getDataBaseCondition(String expectedCondition) {
+        if("Online".equals(expectedCondition)) waitForAnyTextToAppear(dbCondition,"Online");
         return dbCondition.getText();
     }
 
     public void fillNewVipData(String firstName, String lastName, String gender, String category){
-        this.sentVipData.clear();
+       // this.sentVipData.clear();
         firstNameField.type(firstName);
         lastNameField.type(lastName);
             if ("Female".equals(gender)) { femaleGender.click(); }
@@ -157,8 +159,8 @@ public class OperationsPage extends PageObject {
         if ("Save".equals(buttonTitle) && saveButton.isPresent()){ return "Save";}
         if("Clear".equals(buttonTitle) && clearButton.isPresent()){return "Clear"; }
         if ("Add".equals(buttonTitle) && addButton.isPresent()){return "Add"; }
-        if ("Connect...".equals(buttonTitle) && conDiscButton.isPresent()){ return "Connect..."; }
-        if ("Disconnect...".equals(buttonTitle) && conDiscButton.isPresent()){return "Disconnect..."; }
+        if ("Connect".equals(buttonTitle) && conDiscButton.isPresent()){ return "Connect"; }
+        if ("Disconnect".equals(buttonTitle) && conDiscButton.isPresent()){return "Disconnect"; }
         return "Can't find button with title '" + buttonTitle + "'";
     }
     
@@ -175,6 +177,25 @@ public class OperationsPage extends PageObject {
         if ("Add".equals(buttonTitle) && !addButton.isEnabled()) { return "Disabled"; }
         return "Can't get condition of button with title '" + buttonTitle + "'";
     }
-
-
+    
+    public String getPopUpWindowsMessage(){
+        String parentWindowHandle = getDriver().getWindowHandle();
+        String popupWindowHandle = null;
+        String actualMassage = null;
+        Set<String> windowSet = null;
+        Iterator iterator = null;
+        windowSet = getDriver().getWindowHandles();
+        iterator = windowSet.iterator();
+        while(iterator.hasNext()) {
+            popupWindowHandle = iterator.next().toString();
+            if(!parentWindowHandle.equals(popupWindowHandle)){
+                getDriver().switchTo().window(popupWindowHandle);
+                actualMassage = popUpWindowsMessage.getText();
+                getDriver().findElement(By.xpath("//button[text()='OK']")).click();
+                getDriver().switchTo().window(parentWindowHandle);
+                return actualMassage;
+            }
+        }
+        return "Can't get message from pop-up window";
+    }
 }

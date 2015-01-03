@@ -4,8 +4,6 @@ import finalTaskThucydides.pages.OperationsPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
-//import org.hamcrest.MatcherAssert.*;
-
 import java.util.ArrayList;
 
 public class TestSteps extends ScenarioSteps {
@@ -22,20 +20,10 @@ public class TestSteps extends ScenarioSteps {
         operationsPage.clickButtonByTitle(buttonTitle);
     }
 
-    @Step
-    public String getDataBaseCondition(){
-        return operationsPage.getDataBaseCondition();
-    }
-
-    @Step
-    public String getVipCountCondition(){
-        return operationsPage.getVipCountCondition();
-    }
-
+    
     @Step
     public void checkConditionOfDatabase(String conditionOfDataBase) {
-
-       Assert.assertEquals(operationsPage.getDataBaseCondition(), conditionOfDataBase);
+       Assert.assertEquals(operationsPage.getDataBaseCondition(conditionOfDataBase), conditionOfDataBase);
     }
 
     @Step
@@ -53,6 +41,15 @@ public class TestSteps extends ScenarioSteps {
         ArrayList<String> gotVipsFromTable = null;
         String EXPECTED_RESULT = "true", actualResult;
         gotVipsFromTable=operationsPage.getVipDataFromTable(2,2);
+        System.out.println("List of VIPS from table:");
+        for(int i=0; i<gotVipsFromTable.size(); i++){
+            System.out.println(gotVipsFromTable.get(i));
+        }
+        System.out.println("*********************************************************");
+        System.out.println("List of VIPS from class field:");
+        for(int i=0; i<operationsPage.getVipsSentData().size(); i++){
+            System.out.println(operationsPage.getVipsSentData().get(i));
+        }
         actualResult=operationsPage.compareListVipsData(gotVipsFromTable, operationsPage.getVipsSentData());
         //ASSERT
         Assert.assertEquals(EXPECTED_RESULT, actualResult);
@@ -69,6 +66,12 @@ public class TestSteps extends ScenarioSteps {
     public void checkConditionOfButton (String buttonTitle, String buttonCondition){
         String actualResult = operationsPage.getButtonCondition(buttonTitle);
         Assert.assertEquals(buttonCondition,actualResult);
+    }
+    
+    @Step
+    public void comparePopUpWindowsMessage(String popUpWindowsMessage){
+        String actualResult = operationsPage.getPopUpWindowsMessage();
+        Assert.assertEquals(popUpWindowsMessage,actualResult);
     }
     
 }

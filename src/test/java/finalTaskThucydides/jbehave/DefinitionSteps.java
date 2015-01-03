@@ -26,7 +26,7 @@ public class DefinitionSteps {
         operations.checkConditionOfDatabase(conditionOfDataBase);
     }
     
-    @When ("the user add new VIP: '$firstName' '$lastName' '$gender' '$category'")
+    @When ("the user enters VIPs data: first name-'$firstName', last name-'$lastName', gender-'$gender', category-'$category'")
     public void fillNewVipData (String firstName, String lastName, String gender, String category){
         operations.fillNewVipData(firstName, lastName, gender, category);
     }
@@ -49,5 +49,10 @@ public class DefinitionSteps {
     @Then ("'$buttonTitle' button condition should be '$buttonCondition'")
     public void getButtonConditionByTitle (String buttonTitle, String buttonCondition){
         operations.checkConditionOfButton(buttonTitle, buttonCondition);
+    }
+    
+    @Then("the user should see pop-up window with the message: '$popUpWindowsMessage'")
+    public void comparePopUpWindowsMessage(String popUpWindowsMessage){
+        operations.comparePopUpWindowsMessage(popUpWindowsMessage);
     }
 }
