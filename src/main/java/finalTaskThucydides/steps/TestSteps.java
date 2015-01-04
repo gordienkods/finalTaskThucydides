@@ -41,19 +41,8 @@ public class TestSteps extends ScenarioSteps {
         ArrayList<String> gotVipsFromTable = null;
         String EXPECTED_RESULT = "true", actualResult;
         gotVipsFromTable=operationsPage.getVipDataFromTable(2,2);
-//        System.out.println("List of VIPS from table:");
-//        for(int i=0; i<gotVipsFromTable.size(); i++){
-//            System.out.println(gotVipsFromTable.get(i));
-//        }
-//        System.out.println("*********************************************************");
-//        System.out.println("List of VIPS from class field:");
-//        for(int i=0; i<operationsPage.getVipsSentData().size(); i++){
-//            System.out.println(operationsPage.getVipsSentData().get(i));
-//        }
         actualResult=operationsPage.compareListVipsData(gotVipsFromTable, operationsPage.getVipsSentData());
-        //ASSERT
         Assert.assertEquals(EXPECTED_RESULT, actualResult);
-//        log.info("test result: " + EXPECTED_RESULT + " " + actualResult);
     }
     
     @Step
@@ -91,7 +80,6 @@ public class TestSteps extends ScenarioSteps {
         String EXPECTED_RESULT="true", actualResult;
         gotVipsFromTable=operationsPage.getVipDataFromTable(2,2);
         actualResult = operationsPage.compareListVipsData(gotVipsFromTable, operationsPage.getVipsSentDataWithOutDeletedVip(deletedVipNumber-1));
-        //ASSERT
         Assert.assertEquals(EXPECTED_RESULT, actualResult);
     }
     
@@ -104,5 +92,4 @@ public class TestSteps extends ScenarioSteps {
     public void fillVipLastName(String lastName){
         operationsPage.fillVipLastName(lastName);
     }
-
 }

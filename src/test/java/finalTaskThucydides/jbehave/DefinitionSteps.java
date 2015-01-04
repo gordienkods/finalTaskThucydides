@@ -7,6 +7,7 @@ import org.jbehave.core.annotations.*;
 import org.junit.Assert;
 
 public class DefinitionSteps {
+    
     @Steps
     TestSteps operations;
 
