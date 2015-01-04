@@ -22,7 +22,8 @@ public class OperationsPage extends PageObject {
     @FindBy (id = "Category") private WebElementFacade listOfCategory;
     @FindBy (id = "count") private WebElementFacade vipCount;
     @FindBy (id = "Save") private WebElementFacade saveButton;
-    @FindBy (id = "alertTextOKCancel") private WebElementFacade popUpWindowsMessage;
+//    @FindBy (id = "alertTextOKCancel") private WebElementFacade popUpConnectWindowMessage;
+//    @FindBy (id = "alertTextOK") private WebElementFacade popUpErrorWindowMessage;
     @FindBy (id = "Load") private WebElementFacade loadButton;
     @FindBy (id = "Delete") private WebElementFacade deleteButton;
     @FindBy (id = "Clear") private WebElementFacade clearButton;
@@ -58,6 +59,9 @@ public class OperationsPage extends PageObject {
         }
         if ("Delete".equals(buttonTitle)){
             deleteButton.click();
+        }
+        if ("Clear".equals(buttonTitle)){
+            clearButton.click();
         }
     }
     
@@ -98,6 +102,15 @@ public class OperationsPage extends PageObject {
             }
         }
     
+    public void fillVipFirstName(String vipFirstName){
+        lastNameField.clear();
+        firstNameField.type(vipFirstName);
+    }
+    public void fillVipLastName(String vipFirstName){
+        firstNameField.clear();
+        lastNameField.type(vipFirstName);
+    }
+
     public String getVipCountCondition(){
         return vipCount.getText();
     }
@@ -195,7 +208,12 @@ public class OperationsPage extends PageObject {
             popupWindowHandle = iterator.next().toString();
             if(!parentWindowHandle.equals(popupWindowHandle)){
                 getDriver().switchTo().window(popupWindowHandle);
-                actualMassage = popUpWindowsMessage.getText();
+                try {
+                    actualMassage = find(By.id("alertTextOKCancel")).getText();
+                } catch (org.openqa.selenium.NoSuchElementException e){}
+                try {
+                    actualMassage = find(By.id("alertTextOK")).getText();
+                } catch (org.openqa.selenium.NoSuchElementException e){ }
                 getDriver().findElement(By.xpath("//button[text()='OK']")).click();
                 getDriver().switchTo().window(parentWindowHandle);
                 return actualMassage;
@@ -209,9 +227,9 @@ public class OperationsPage extends PageObject {
 //        log.info("VIP number " + (vipLineNumber+1) + " deleted");
         
     }
-    public void deleteVipByNumber (Integer vipLineNumber){
-
-    }
+//    public void deleteVipByNumber (Integer vipLineNumber){
+//
+//    }
 
     public Integer countLineInVipsTable (){
         Integer countLineInVipsTable = 1;

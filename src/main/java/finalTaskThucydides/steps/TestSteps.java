@@ -95,4 +95,14 @@ public class TestSteps extends ScenarioSteps {
         Assert.assertEquals(EXPECTED_RESULT, actualResult);
     }
     
+    @Step
+    public void fillVipFirstName(String firstName){
+        operationsPage.fillVipFirstName(firstName);
+    }
+
+    @Step
+    public void fillVipLastName(String lastName){
+        operationsPage.fillVipLastName(lastName);
+    }
+
 }

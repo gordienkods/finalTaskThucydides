@@ -29,6 +29,6 @@ When the user click 'Add' button
 When the user enters VIPs data: first name-'Vika', last name-'Balabanova', gender-'Female', category-'Politics'
 When the user click 'Add' button
 Then VIPs count should be 'VIP count: 6'
-
-Scenario: entered VIPs data should be the same with VIPs data from the table
 Then entered VIPs data should be the same with VIPs data from the table
+
+

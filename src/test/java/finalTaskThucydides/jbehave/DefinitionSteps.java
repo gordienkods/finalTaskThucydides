@@ -70,4 +70,14 @@ public class DefinitionSteps {
     public void compareVipsTable(int deletedVipNumber){
         operations.checkResultOfDeleteOperation(deletedVipNumber);
     }
+
+    @Given ("the user enters VIPs first name '$firstName'")
+    public void fillVipFirstName(String firstName){
+        operations.fillVipFirstName(firstName);
+    }
+
+    @Given ("the user enters VIPs last name '$lastName'")
+    public void fillVipLastName(String lastName){
+        operations.fillVipLastName(lastName);
+    }
 }

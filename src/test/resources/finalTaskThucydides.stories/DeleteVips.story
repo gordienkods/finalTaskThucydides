@@ -41,4 +41,3 @@ When the user click 'Delete' button
 Then VIPs count should be 'VIP count: 0'
 Then quantity of Vips lines in table should be '1'
 Then 'Delete' button condition should be 'Disabled'
-
