@@ -1,0 +1,127 @@
+ INFO 10.16.56 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Disconnect' button
+ INFO 10.16.56 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.16.56 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.16.57 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Connect'
+ INFO 10.16.58 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Load'
+ INFO 10.16.59 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Load' is 'Disabled'
+ INFO 10.16.59 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Save'
+ INFO 10.17.00 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Save' is 'Disabled'
+ INFO 10.17.00 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Delete'
+ INFO 10.17.01 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Disabled'
+ INFO 10.17.10 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Load' button
+ INFO 10.17.10 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 6
+ INFO 10.17.11 finalTaskThucydides.pages.OperationsPage countLineInVipsTable - Count of lines in VIPs table is 7
+ INFO 10.17.12 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Enabled'
+ INFO 10.17.13 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Clear' button
+ INFO 10.17.13 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 0
+ INFO 10.17.14 finalTaskThucydides.pages.OperationsPage countLineInVipsTable - Count of lines in VIPs table is 1
+ INFO 10.17.15 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Disabled'
+ INFO 10.17.23 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.17.23 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.17.25 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Gora Vilkin Male Other
+ INFO 10.17.26 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.17.26 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Enabled'
+ INFO 10.17.28 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Dusya Barankina Female Music
+ INFO 10.17.29 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.17.31 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Vasya Ivanov Male Movie
+ INFO 10.17.31 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.17.33 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Manya Pupkina Female Science
+ERROR 10.17.33 finalTaskThucydides.pages.OperationsPage fillNewVipData - Undefined VIP category
+ INFO 10.17.34 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.17.36 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Gera Popov Male Sport
+ INFO 10.17.37 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.17.38 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Vika Balabanova Female Politics
+ INFO 10.17.39 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.17.40 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 6
+ INFO 10.17.41 finalTaskThucydides.pages.OperationsPage checkVipsLineByNumber - VIP number 3 deleted
+ INFO 10.17.42 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Delete' button
+ INFO 10.17.43 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Gora Vilkin Male Other
+ INFO 10.17.43 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Vasya Ivanov Male Movie
+ INFO 10.17.43 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Manya Pupkina Female Science
+ INFO 10.17.43 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Gera Popov Male Sport
+ INFO 10.17.43 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Vika Balabanova Female Politics
+ INFO 10.17.43 finalTaskThucydides.pages.OperationsPage compareListVipsData - Result of compare two VIPs lists is 'true'
+ INFO 10.17.44 finalTaskThucydides.pages.OperationsPage countLineInVipsTable - Count of lines in VIPs table is 6
+ INFO 10.17.45 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 5
+ INFO 10.17.46 finalTaskThucydides.pages.OperationsPage checkVipsLineByNumber - VIP number 2 deleted
+ INFO 10.17.46 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Delete' button
+ INFO 10.17.47 finalTaskThucydides.pages.OperationsPage checkVipsLineByNumber - VIP number 2 deleted
+ INFO 10.17.48 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Delete' button
+ INFO 10.17.49 finalTaskThucydides.pages.OperationsPage checkVipsLineByNumber - VIP number 2 deleted
+ INFO 10.17.50 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Delete' button
+ INFO 10.17.50 finalTaskThucydides.pages.OperationsPage checkVipsLineByNumber - VIP number 2 deleted
+ INFO 10.17.51 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Delete' button
+ INFO 10.17.52 finalTaskThucydides.pages.OperationsPage checkVipsLineByNumber - VIP number 2 deleted
+ INFO 10.17.52 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Delete' button
+ INFO 10.17.53 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 0
+ INFO 10.17.54 finalTaskThucydides.pages.OperationsPage countLineInVipsTable - Count of lines in VIPs table is 1
+ INFO 10.17.54 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Disabled'
+ INFO 10.18.03 finalTaskThucydides.pages.OperationsPage fillVipFirstName - VIPs 'First name' field cleared
+ INFO 10.18.03 finalTaskThucydides.pages.OperationsPage fillVipFirstName - VIPs 'First name' field filled: Gesha
+ INFO 10.18.05 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.06 finalTaskThucydides.pages.OperationsPage fillVipLastName - VIPs 'Last name' field cleared
+ INFO 10.18.07 finalTaskThucydides.pages.OperationsPage fillVipLastName - VIPs 'Last name' field filled: Pupkin
+ INFO 10.18.07 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.16 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.18.16 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.18.18 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Gora Vilkin Male Other
+ INFO 10.18.19 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.20 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Enabled'
+ INFO 10.18.21 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Dusya Barankina Female Music
+ INFO 10.18.22 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.24 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Vasya Ivanov Male Movie
+ INFO 10.18.25 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.25 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 3
+ INFO 10.18.26 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Gora Vilkin Male Other
+ INFO 10.18.26 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Dusya Barankina Female Music
+ INFO 10.18.26 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Vasya Ivanov Male Movie
+ INFO 10.18.26 finalTaskThucydides.pages.OperationsPage compareListVipsData - Result of compare two VIPs lists is 'true'
+ INFO 10.18.32 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Save' button
+ INFO 10.18.40 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.18.40 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.18.41 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Load'
+ INFO 10.18.42 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Load' is 'Enabled'
+ INFO 10.18.42 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Save'
+ INFO 10.18.43 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Save' is 'Enabled'
+ INFO 10.18.43 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Add'
+ INFO 10.18.44 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Add' is 'Enabled'
+ INFO 10.18.45 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Clear'
+ INFO 10.18.45 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Clear' is 'Enabled'
+ INFO 10.18.46 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Delete'
+ INFO 10.18.46 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Disabled'
+ INFO 10.18.49 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Gora Vilkin Male Other
+ INFO 10.18.49 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.50 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Delete' is 'Enabled'
+ INFO 10.18.51 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Dusya Barankina Female Music
+ INFO 10.18.52 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.54 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Vasya Ivanov Male Movie
+ INFO 10.18.55 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.56 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Manya Pupkina Female Science
+ERROR 10.18.56 finalTaskThucydides.pages.OperationsPage fillNewVipData - Undefined VIP category
+ INFO 10.18.57 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.18.59 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Gera Popov Male Sport
+ INFO 10.18.59 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.19.01 finalTaskThucydides.pages.OperationsPage fillNewVipData - User added VIP: Vika Balabanova Female Politics
+ INFO 10.19.02 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Add' button
+ INFO 10.19.03 finalTaskThucydides.pages.OperationsPage getVipCountCondition - Got VIP count condition is: VIP count: 6
+ INFO 10.19.04 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Gora Vilkin Male Other
+ INFO 10.19.04 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Dusya Barankina Female Music
+ INFO 10.19.04 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Vasya Ivanov Male Movie
+ INFO 10.19.04 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Manya Pupkina Female Science
+ INFO 10.19.05 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Gera Popov Male Sport
+ INFO 10.19.05 finalTaskThucydides.pages.OperationsPage getVipDataFromTable - VIPs data has read from table: Vika Balabanova Female Politics
+ INFO 10.19.05 finalTaskThucydides.pages.OperationsPage compareListVipsData - Result of compare two VIPs lists is 'true'
+ INFO 10.19.14 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Disconnect' button
+ INFO 10.19.14 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.19.14 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.19.15 finalTaskThucydides.pages.OperationsPage clickButtonByTitle - User clicks 'Connect' button
+ INFO 10.19.17 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.19.17 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.19.17 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Waiting change data base condition to 'Online'...
+ INFO 10.19.19 finalTaskThucydides.pages.OperationsPage getDataBaseCondition - Data base condition is 'Online'
+ INFO 10.19.20 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Disconnect'
+ INFO 10.19.20 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Load'
+ INFO 10.19.21 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Load' is 'Enabled'
+ INFO 10.19.22 finalTaskThucydides.pages.OperationsPage findButtonOnPageByTitle - Was found button 'Save'
+ INFO 10.19.22 finalTaskThucydides.pages.OperationsPage getButtonCondition - Condition of button 'Save' is 'Enabled'
+ INFO 10.19.23 org.hibernate.validator.internal.util.Version <clinit> - HV000001: Hibernate Validator 5.1.1.Final
