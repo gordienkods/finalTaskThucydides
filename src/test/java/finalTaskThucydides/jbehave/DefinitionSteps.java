@@ -12,9 +12,9 @@ public class DefinitionSteps {
     TestSteps operations;
 
 
-    @Given("the user is on the ranorex main page")
-    public void givenTheUserIsOnTheRanorexWebPage() {
-        operations.goToMainPage();
+    @Given("the user is on the ranorex main page and data base condition is '$requiredDataBaseCondition'")
+    public void givenTheUserIsOnTheRanorexWebPage(String requiredDataBaseCondition) {
+        operations.goToMainPage(requiredDataBaseCondition);
     }
     
     @When("the user click '$buttonTitle' button")
@@ -42,7 +42,7 @@ public class DefinitionSteps {
         operations.compareVipsData();
     }
     
-    @Given ("the user finds '$buttonTitle' button")
+    @Then ("the user should see '$buttonTitle' button")
     public void findButtonOnPageByTitle(String buttonTitle){
         operations.findButtonOnPageByTitle(buttonTitle);
     }
@@ -57,7 +57,7 @@ public class DefinitionSteps {
         operations.comparePopUpWindowsMessage(popUpWindowsMessage);
     }
 
-    @Given ("the user click radio button near vip number '$vipLineNumber'")
+    @When ("the user click radio button near vip number '$vipLineNumber'")
     public void checkVipsLineByNumber (int vipLineNumber){
         operations.checkVipsLineByNumber(vipLineNumber);
     }
@@ -72,12 +72,12 @@ public class DefinitionSteps {
         operations.checkResultOfDeleteOperation(deletedVipNumber);
     }
 
-    @Given ("the user enters VIPs first name '$firstName'")
+    @When ("the user enters VIPs first name '$firstName'")
     public void fillVipFirstName(String firstName){
         operations.fillVipFirstName(firstName);
     }
 
-    @Given ("the user enters VIPs last name '$lastName'")
+    @When ("the user enters VIPs last name '$lastName'")
     public void fillVipLastName(String lastName){
         operations.fillVipLastName(lastName);
     }

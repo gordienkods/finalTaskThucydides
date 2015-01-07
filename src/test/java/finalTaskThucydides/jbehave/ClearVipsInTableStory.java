@@ -2,5 +2,5 @@ package finalTaskThucydides.jbehave;
 
 import net.thucydides.jbehave.ThucydidesJUnitStory;
 
-public class SaveVipsStory extends ThucydidesJUnitStory {
+public class ClearVipsInTableStory extends ThucydidesJUnitStory {
 }

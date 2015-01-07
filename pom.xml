@@ -93,7 +93,7 @@
                     </systemProperties>
                     <argLine>-Dwebdriver.driver=${webdriver.driver}</argLine>
                     <forkMode>perthread</forkMode>
-                    <threadCount>1</threadCount>
+                    <threadCount>2</threadCount>
                 </configuration>
                 <executions>
                     <execution>

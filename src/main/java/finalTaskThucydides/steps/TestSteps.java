@@ -9,12 +9,9 @@ import java.util.ArrayList;
 public class TestSteps extends ScenarioSteps {
     
     OperationsPage operationsPage;
-    
-    @Step
-    public void goToMainPage(){
-        operationsPage.open();
-    }
-    
+    private ArrayList<String> sentVipData = new ArrayList<String>();
+
+
     @Step
     public void clickButton(String buttonTitle){
         operationsPage.clickButtonByTitle(buttonTitle);
@@ -29,6 +26,7 @@ public class TestSteps extends ScenarioSteps {
     @Step
     public void fillNewVipData(String firstName, String lastName, String gender, String category){
         operationsPage.fillNewVipData(firstName, lastName, gender, category);
+        this.sentVipData.add(firstName+" "+lastName+" "+gender+" "+category);
     }
 
     @Step
@@ -38,11 +36,10 @@ public class TestSteps extends ScenarioSteps {
     
     @Step
     public void compareVipsData(){
-        ArrayList<String> gotVipsFromTable = null;
-        String EXPECTED_RESULT = "true", actualResult;
-        gotVipsFromTable=operationsPage.getVipDataFromTable(2,2);
-        actualResult=operationsPage.compareListVipsData(gotVipsFromTable, operationsPage.getVipsSentData());
-        Assert.assertEquals(EXPECTED_RESULT, actualResult);
+        ArrayList<String> actualResult = operationsPage.getVipDataFromTable();
+        for (int i=0; i<this.sentVipData.size(); i++) {
+            Assert.assertEquals(this.sentVipData.get(i), actualResult.get(i));
+        }
     }
     
     @Step
@@ -76,11 +73,11 @@ public class TestSteps extends ScenarioSteps {
     
     @Step
     public void checkResultOfDeleteOperation(int deletedVipNumber){
-        ArrayList<String> gotVipsFromTable = null;
-        String EXPECTED_RESULT="true", actualResult;
-        gotVipsFromTable=operationsPage.getVipDataFromTable(2,2);
-        actualResult = operationsPage.compareListVipsData(gotVipsFromTable, operationsPage.getVipsSentDataWithOutDeletedVip(deletedVipNumber-1));
-        Assert.assertEquals(EXPECTED_RESULT, actualResult);
+        this.sentVipData.remove(deletedVipNumber-1);
+        ArrayList<String> actualResult = operationsPage.getVipDataFromTable();
+        for (int i=0; i<this.sentVipData.size(); i++) {
+            Assert.assertEquals(this.sentVipData.get(i), actualResult.get(i));
+        }
     }
     
     @Step
@@ -92,4 +89,17 @@ public class TestSteps extends ScenarioSteps {
     public void fillVipLastName(String lastName){
         operationsPage.fillVipLastName(lastName);
     }
+
+    @Step
+    public void goToMainPage (String requiredDataBaseCondition) {
+        operationsPage.open();
+            if("Online".equals(requiredDataBaseCondition) && "Offline".equals(operationsPage.getDataBaseConditionText())){
+                operationsPage.clickButtonByTitle("Connect...");
+            }
+            if("Offline".equals(requiredDataBaseCondition) && "Online".equals(operationsPage.getDataBaseConditionText())){
+                operationsPage.clickButtonByTitle("Disconnect...");
+                waitABit(3000);
+            }
+        }
+            
 }
