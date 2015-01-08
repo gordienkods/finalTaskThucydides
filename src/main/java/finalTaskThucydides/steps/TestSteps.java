@@ -20,7 +20,7 @@ public class TestSteps extends ScenarioSteps {
     
     @Step
     public void checkConditionOfDatabase(String conditionOfDataBase) {
-       Assert.assertEquals(operationsPage.getDataBaseCondition(conditionOfDataBase), conditionOfDataBase);
+       Assert.assertEquals("Expected condition of data base doesn't match actual condition",conditionOfDataBase, operationsPage.getDataBaseCondition(conditionOfDataBase));
     }
 
     @Step
@@ -31,33 +31,39 @@ public class TestSteps extends ScenarioSteps {
 
     @Step
     public void compareVipCountCondition (String expectedVipCountCondition){
-        Assert.assertEquals(expectedVipCountCondition, operationsPage.getVipCountCondition());
+        Assert.assertEquals("Expected VIPs count of doesn't match actual condition", expectedVipCountCondition, operationsPage.getVipCountCondition());
     }
     
     @Step
     public void compareVipsData(){
         ArrayList<String> actualResult = operationsPage.getVipDataFromTable();
         for (int i=0; i<this.sentVipData.size(); i++) {
-            Assert.assertEquals(this.sentVipData.get(i), actualResult.get(i));
+            Assert.assertEquals("VIPs data in the table  doesn't match entered data" ,this.sentVipData.get(i), actualResult.get(i));
         }
     }
     
     @Step
     public void findButtonOnPageByTitle(String buttonTitle){
         String actualResult = operationsPage.findButtonOnPageByTitle(buttonTitle);
-        Assert.assertEquals(buttonTitle,actualResult);
+        Assert.assertEquals("Can't find button with given title", buttonTitle,actualResult);
     }
     
     @Step
     public void checkConditionOfButton (String buttonTitle, String buttonCondition){
         String actualResult = operationsPage.getButtonCondition(buttonTitle);
-        Assert.assertEquals(buttonCondition,actualResult);
+        Assert.assertEquals("Expected condition of button doesn't match actual condition", buttonCondition,actualResult);
     }
     
     @Step
-    public void comparePopUpWindowsMessage(String popUpWindowsMessage){
-        String actualResult = operationsPage.getPopUpWindowsMessage();
-        Assert.assertEquals(popUpWindowsMessage,actualResult);
+    public void compareInfoFromPopUpWindow(String popUpWindowMessage){
+        String actualResult = operationsPage.getInfoFromPopUpWindow();
+        Assert.assertEquals("Expected pop up window info message doesn't match actual message", popUpWindowMessage,actualResult);
+    }
+
+    @Step
+    public void compareQuestionFromPopUpWindow(String popUpWindowQuestion){
+        String actualResult = operationsPage.getQuestionFromPopUpWindow();
+        Assert.assertEquals("Expected pop up window question message doesn't match actual question", popUpWindowQuestion,actualResult);
     }
     
     @Step
@@ -68,7 +74,7 @@ public class TestSteps extends ScenarioSteps {
     @Step
     public void compareLineQuantityInVipsTable(int expectedQuantity){
         int actualResult = operationsPage.countLineInVipsTable();
-        Assert.assertEquals(expectedQuantity,actualResult);
+        Assert.assertEquals("Expected quantity of lines in VIPs table doesn't match actual quantity",expectedQuantity,actualResult);
     }
     
     @Step
@@ -76,7 +82,7 @@ public class TestSteps extends ScenarioSteps {
         this.sentVipData.remove(deletedVipNumber-1);
         ArrayList<String> actualResult = operationsPage.getVipDataFromTable();
         for (int i=0; i<this.sentVipData.size(); i++) {
-            Assert.assertEquals(this.sentVipData.get(i), actualResult.get(i));
+            Assert.assertEquals("Expected result of operation 'Delete' doesn't match actual result",this.sentVipData.get(i), actualResult.get(i));
         }
     }
     
@@ -101,5 +107,4 @@ public class TestSteps extends ScenarioSteps {
                 waitABit(3000);
             }
         }
-            
 }

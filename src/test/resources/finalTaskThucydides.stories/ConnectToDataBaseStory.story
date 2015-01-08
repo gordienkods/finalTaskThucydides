@@ -1,7 +1,7 @@
 Scenario: Connect to data base
 Given the user is on the ranorex main page and data base condition is 'Offline'
 When the user click 'Connect...' button
-Then the user should see pop-up window with the message: 'Connect to Database?'
+Then the user should see pop-up window with the question: 'Connect to Database?'
 And the user should see that condition of database is 'Connecting...'
 And the user should see that condition of database is 'Online'
 And the user should see 'Disconnect...' button

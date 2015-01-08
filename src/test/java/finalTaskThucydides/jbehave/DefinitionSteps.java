@@ -52,11 +52,16 @@ public class DefinitionSteps {
         operations.checkConditionOfButton(buttonTitle, buttonCondition);
     }
     
-    @Then("the user should see pop-up window with the message: '$popUpWindowsMessage'")
-    public void comparePopUpWindowsMessage(String popUpWindowsMessage){
-        operations.comparePopUpWindowsMessage(popUpWindowsMessage);
+    @Then("the user should see pop-up window with the info message: '$popUpWindowsMessage'")
+    public void comparePopUpWindowsInfoMessage(String popUpWindowsMessage){
+        operations.compareInfoFromPopUpWindow(popUpWindowsMessage);
     }
 
+    @Then("the user should see pop-up window with the question: '$popUpWindowsQuestion'")
+    public void comparePopUpWindowsQuestion(String popUpWindowsQuestion){
+        operations.compareQuestionFromPopUpWindow(popUpWindowsQuestion);
+    }
+    
     @When ("the user click radio button near vip number '$vipLineNumber'")
     public void checkVipsLineByNumber (int vipLineNumber){
         operations.checkVipsLineByNumber(vipLineNumber);

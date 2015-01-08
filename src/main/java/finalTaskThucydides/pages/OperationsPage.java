@@ -148,7 +148,32 @@ public class OperationsPage extends PageObject {
         }
     }
     
-    public String getPopUpWindowsMessage(){
+    public String getInfoFromPopUpWindow(){
+        String parentWindowHandle = getDriver().getWindowHandle();
+        String popupWindowHandle = null;
+        String actualMassage = null;
+        Set<String> windowSet = null;
+        Iterator iterator = null;
+        windowSet = getDriver().getWindowHandles();
+        iterator = windowSet.iterator();
+        while(iterator.hasNext()) {
+            popupWindowHandle = iterator.next().toString();
+            if(!parentWindowHandle.equals(popupWindowHandle)){
+                getDriver().switchTo().window(popupWindowHandle);
+                try {
+                    actualMassage = find(By.id("alertTextOK")).getText();
+                    LOG.info("Got message from pop up window: " + actualMassage);
+                } catch (org.openqa.selenium.NoSuchElementException e){ }
+                getDriver().findElement(By.xpath("//button[text()='OK']")).click();
+                getDriver().switchTo().window(parentWindowHandle);
+                return actualMassage;
+            }
+        }
+        LOG.error("Can't get info message from pop-up window");
+        return "Can't get info message from pop-up window";
+    }
+
+    public String getQuestionFromPopUpWindow(){
         String parentWindowHandle = getDriver().getWindowHandle();
         String popupWindowHandle = null;
         String actualMassage = null;
@@ -164,17 +189,13 @@ public class OperationsPage extends PageObject {
                     actualMassage = find(By.id("alertTextOKCancel")).getText();
                     LOG.info("Got message from pop up window: " + actualMassage);
                 } catch (org.openqa.selenium.NoSuchElementException e){}
-                try {
-                    actualMassage = find(By.id("alertTextOK")).getText();
-                    LOG.info("Got message from pop up window: " + actualMassage);
-                } catch (org.openqa.selenium.NoSuchElementException e){ }
                 getDriver().findElement(By.xpath("//button[text()='OK']")).click();
                 getDriver().switchTo().window(parentWindowHandle);
                 return actualMassage;
             }
         }
-        LOG.error("Can't get message from pop-up window");
-        return "Can't get message from pop-up window";
+        LOG.error("Can't get question from pop-up window");
+        return "Can't get question from pop-up window";
     }
 
     public void checkVipsLineByNumber (int vipLineNumber){
