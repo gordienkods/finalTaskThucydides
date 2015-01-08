@@ -153,11 +153,11 @@ public class OperationsPage extends PageObject {
         String popupWindowHandle = null;
         String actualMassage = null;
         Set<String> windowSet = null;
-        Iterator iterator = null;
+        Iterator<String> iterator = null;
         windowSet = getDriver().getWindowHandles();
         iterator = windowSet.iterator();
         while(iterator.hasNext()) {
-            popupWindowHandle = iterator.next().toString();
+            popupWindowHandle = iterator.next();
             if(!parentWindowHandle.equals(popupWindowHandle)){
                 getDriver().switchTo().window(popupWindowHandle);
                 try {
@@ -178,11 +178,11 @@ public class OperationsPage extends PageObject {
         String popupWindowHandle = null;
         String actualMassage = null;
         Set<String> windowSet = null;
-        Iterator iterator = null;
+        Iterator<String> iterator = null;
         windowSet = getDriver().getWindowHandles();
         iterator = windowSet.iterator();
         while(iterator.hasNext()) {
-            popupWindowHandle = iterator.next().toString();
+            popupWindowHandle = iterator.next();
             if(!parentWindowHandle.equals(popupWindowHandle)){
                 getDriver().switchTo().window(popupWindowHandle);
                 try {
