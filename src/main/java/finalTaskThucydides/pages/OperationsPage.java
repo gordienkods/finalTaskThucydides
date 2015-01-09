@@ -87,21 +87,13 @@ public class OperationsPage extends PageObject {
     public ArrayList<String> getVipDataFromTable() {
         ArrayList<String> allVipData = new ArrayList<String>();
         String vipInfoFromTableString = null;
-        Integer countLinesInVipsTable = 1;
-        Integer countColumnsInVipsTable = 6;
-        do{
-            try{
-                find(By.xpath("//table[@id='VIPs']/tbody/tr[" + countLinesInVipsTable + "]"));
-            }catch (org.openqa.selenium.NoSuchElementException e){
-                break;
-            }
-            countLinesInVipsTable++;
-        }while (true);
-        for (int a = 2; a < countLinesInVipsTable; a++) {
+        int countLinesInVipsTable = getDriver().findElements(By.xpath("//table[@id='VIPs']/tbody/tr")).size();
+        int countColumnsInVipsTable = getDriver().findElements(By.xpath("//table[@id='VIPs']/tbody/tr[1]/td")).size();
+        for (int a = 2; a <= countLinesInVipsTable; a++) {
             vipInfoFromTableString = "";
-            for (int b = 2; b < countColumnsInVipsTable; b++) {
+            for (int b = 2; b <= countColumnsInVipsTable; b++) {
                 vipInfoFromTableString = vipInfoFromTableString + find(By.xpath("//table[@id='VIPs']/tbody/tr[" + a + "]/td[" + b + "]")).getText();
-                if (b < countColumnsInVipsTable - 1 ) {vipInfoFromTableString = vipInfoFromTableString + " "; }
+                if (b < countColumnsInVipsTable) {vipInfoFromTableString = vipInfoFromTableString + " "; }
             }
             allVipData.add(vipInfoFromTableString);
             LOG.info("VIPs data has read from table: " + vipInfoFromTableString);
