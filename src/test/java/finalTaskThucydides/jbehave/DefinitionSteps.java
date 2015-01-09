@@ -1,10 +1,8 @@
 package finalTaskThucydides.jbehave;
 
 import finalTaskThucydides.steps.TestSteps;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.*;
-import org.junit.Assert;
 
 public class DefinitionSteps {
     
@@ -72,7 +70,7 @@ public class DefinitionSteps {
         operations.compareLineQuantityInVipsTable(expectedQuantity);
     }
 
-    @Then ("the user should see vips table with out VIP number '$deletedVipNumber'")
+    @Then ("the user should see vips table without VIP number '$deletedVipNumber'")
     public void compareVipsTable(int deletedVipNumber){
         operations.checkResultOfDeleteOperation(deletedVipNumber);
     }

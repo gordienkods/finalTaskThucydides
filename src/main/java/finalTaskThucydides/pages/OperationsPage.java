@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Set;
 import org.apache.log4j.Logger;
-import sun.java2d.SurfaceDataProxy;
 
 @DefaultUrl("http://www.ranorex.com/web-testing-examples/vip")
 
@@ -24,11 +23,6 @@ public class OperationsPage extends PageObject {
     @FindBy (id = "Add") private WebElementFacade addButton;
     @FindBy (id = "Category") private WebElementFacade listOfCategory;
     @FindBy (id = "count") private WebElementFacade vipCount;
-    @FindBy (id = "Save") private WebElementFacade saveButton;
-    @FindBy (id = "Load") private WebElementFacade loadButton;
-    @FindBy (id = "Delete") private WebElementFacade deleteButton;
-    @FindBy (id = "Clear") private WebElementFacade clearButton;
-    @FindBy (id = "connect") private WebElementFacade conDiscButton;
     @FindBy (id = "connection") private WebElementFacade dbCondition;
 
     public void clickButtonByTitle (String buttonTitle){
@@ -74,15 +68,15 @@ public class OperationsPage extends PageObject {
     
     public void fillVipFirstName(String vipFirstName){
         lastNameField.clear();
-        LOG.info("VIPs 'First name' field cleared");
+        LOG.info("VIPs 'Last name' field cleared");
         firstNameField.type(vipFirstName);
-        LOG.info("VIPs 'First name' field filled: " + vipFirstName);
+        LOG.info("VIPs 'First name' field filled: '" + vipFirstName+"'");
     }
     public void fillVipLastName(String vipLastName){
         firstNameField.clear();
-        LOG.info("VIPs 'Last name' field cleared");
+        LOG.info("VIPs 'First name' field cleared");
         lastNameField.type(vipLastName);
-        LOG.info("VIPs 'Last name' field filled: " + vipLastName);
+        LOG.info("VIPs 'Last name' field filled: '" + vipLastName+"'");
     }
 
     public String getVipCountCondition(){
@@ -115,23 +109,6 @@ public class OperationsPage extends PageObject {
         return allVipData;
     }
 
-//    public String compareListVipsData(ArrayList<String> list1, ArrayList<String> list2 ){
-//        for (int i=0; i<list1.size(); i++){
-//            if (!list1.get(i).equals(list2.get(i)))
-//            {
-//                LOG.info("VIPs lists are not same");
-//                return "Gave value: " + list1.get(i) + " is different from got value: " + list2.get(i);
-//            }
-//        }
-//        LOG.info("Result of compare two VIPs lists is 'true'");
-//        return "true";
-//    }
-    
-//    public ArrayList<String> getVipsSentDataWithOutDeletedVip(int number){
-//        this.sentVipData.remove(number);
-//        return this.sentVipData;
-//    }
-//
     public String getButtonCondition(String buttonTitle){
         String buttonCondition=null;
         try{
@@ -205,7 +182,6 @@ public class OperationsPage extends PageObject {
         } catch (org.openqa.selenium.NoSuchElementException e){
             LOG.error("Can't check VIPs line by number '" + vipLineNumber + "'");
         }
-        
     }
 
     public Integer countLineInVipsTable (){

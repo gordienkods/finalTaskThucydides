@@ -1,4 +1,4 @@
-Scenario: Delete Vip from table by number
+Scenario: Delete VIP from table by number
 Given the user is on the ranorex main page and data base condition is 'Online'
 When the user enters VIPs data: first name-'Gora', last name-'Vilkin', gender-'Male', category-'Other'
 And the user click 'Add' button
@@ -16,7 +16,7 @@ And the user click radio button near vip number '2'
 And the user click 'Delete' button
 Then VIPs count should be 'VIP count: 5'
 And quantity of Vips lines in table should be '5'
-And the user should see vips table with out VIP number '2'
+And the user should see vips table without VIP number '2'
 
 Scenario: Clear VIPs table using delete button
 Given the user is on the ranorex main page and data base condition is 'Online'

@@ -99,12 +99,12 @@ public class TestSteps extends ScenarioSteps {
     @Step
     public void goToMainPage (String requiredDataBaseCondition) {
         operationsPage.open();
-            if("Online".equals(requiredDataBaseCondition) && "Offline".equals(operationsPage.getDataBaseConditionText())){
-                operationsPage.clickButtonByTitle("Connect...");
-            }
-            if("Offline".equals(requiredDataBaseCondition) && "Online".equals(operationsPage.getDataBaseConditionText())){
-                operationsPage.clickButtonByTitle("Disconnect...");
-                waitABit(3000);
-            }
+        if("Online".equals(requiredDataBaseCondition) && "Offline".equals(operationsPage.getDataBaseConditionText())){
+            operationsPage.clickButtonByTitle("Connect...");
         }
+        if("Offline".equals(requiredDataBaseCondition) && "Online".equals(operationsPage.getDataBaseConditionText())){
+            operationsPage.clickButtonByTitle("Disconnect...");
+            waitABit(3000);
+        }
+    }
 }
