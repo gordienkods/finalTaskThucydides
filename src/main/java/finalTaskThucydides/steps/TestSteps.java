@@ -104,7 +104,6 @@ public class TestSteps extends ScenarioSteps {
         }
         if("Offline".equals(requiredDataBaseCondition) && "Online".equals(operationsPage.getDataBaseConditionText())){
             operationsPage.clickButtonByTitle("Disconnect...");
-            waitABit(3000);
         }
     }
 }
